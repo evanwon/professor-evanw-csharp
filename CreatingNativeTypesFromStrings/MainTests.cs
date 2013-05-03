@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CreatingNativeTypesFromStrings
@@ -22,14 +24,37 @@ namespace CreatingNativeTypesFromStrings
         }
 
         [TestMethod]
+        [ExpectedException(typeof(System.FormatException))]
+        public void CreateIntFromDatabase_ValueIsNotAnInt_ThrowsException()
+        {
+            Type typeFromDatabase = Type.GetType("System.Int32");
+            object valueFromDatabase = "Hello world!";
+
+            // This should fail, and if we need additional information, we know that we were expecting
+            // a System.Int32 from 'typeFromDatabase', so we can tell the user we didn't receive it
+            try
+            {
+                dynamic convertedToBuiltInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
+
+                // If we make it this far, something went wrong. An exception should have occurred.
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                // Let's say we want to tell the user what happened. We already know the expected type.
+                Assert.Inconclusive("Data conversion error. Expected type ({0}).\n\n{1}", typeFromDatabase, ex);
+            }
+        }
+
+        [TestMethod]
         public void CreateStringFromDatabase()
         {
             Type typeFromDatabase = Type.GetType("System.String");
             object valueFromDatabase = "Hello world!";
 
-            dynamic convertedToBuildInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
+            dynamic convertedToBuiltInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
 
-            Assert.IsTrue(convertedToBuildInType is string);
+            Assert.IsTrue(convertedToBuiltInType is string);
         }
 
         [TestMethod]
@@ -38,9 +63,9 @@ namespace CreatingNativeTypesFromStrings
             Type typeFromDatabase = Type.GetType("System.Double");
             object valueFromDatabase = "1.21";
 
-            dynamic convertedToBuildInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
+            dynamic convertedToBuiltInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
 
-            Assert.IsTrue(convertedToBuildInType is double);
+            Assert.IsTrue(convertedToBuiltInType is double);
         }
 
         [TestMethod]
@@ -49,9 +74,9 @@ namespace CreatingNativeTypesFromStrings
             Type typeFromDatabase = Type.GetType("System.Boolean");
             object valueFromDatabase = "True";
 
-            dynamic convertedToBuildInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
+            dynamic convertedToBuiltInType = Convert.ChangeType(valueFromDatabase, typeFromDatabase);
 
-            Assert.IsTrue(convertedToBuildInType is bool);
+            Assert.IsTrue(convertedToBuiltInType is bool);
         }
     }
 }
