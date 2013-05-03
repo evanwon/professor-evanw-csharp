@@ -1,5 +1,4 @@
-professor-evanw-csharp
-===============
+# professor-evanw-csharp
 
 Previously, when asked questions about a C#, WPF, or .NET programming problem, I would create a simple one-off local project to answer the question or demonstrate some functionality. After I was finished, the project would likely never see the light of day again. 
 
@@ -7,8 +6,7 @@ I've decided to do something smart instead: Each project in this repository has 
 
 Want to contribute an example, improve an existing example, or fix a bug? Send me a pull request!
 
-License
-======
+## License
 
 The MIT License (MIT)
 
