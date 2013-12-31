@@ -78,6 +78,13 @@ namespace UnitTesting_BuilderPattern.Builders
             return this;
         }
 
+        public MainBuilder NullProduct()
+        {
+            Main.Product = null;
+
+            return this;
+        }
+
         public MainBuilder DatabaseOnline()
         {
             var database = new StubDatabase()
