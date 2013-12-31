@@ -1,7 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingNativeTypesFromStrings", "CreatingNativeTypesFromStrings\CreatingNativeTypesFromStrings.csproj", "{88200187-A006-4DA0-B645-0138BE0B5F8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting_BuilderPattern", "UnitTesting_BuilderPattern", "{4B7DCD60-218F-4D49-BE89-E1482A24AE3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting_BuilderPattern", "UnitTesting_BuilderPattern\UnitTesting_BuilderPattern.csproj", "{31B52052-87B2-455C-9F12-B16695A267A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +19,15 @@ Global
 		{88200187-A006-4DA0-B645-0138BE0B5F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88200187-A006-4DA0-B645-0138BE0B5F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88200187-A006-4DA0-B645-0138BE0B5F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B52052-87B2-455C-9F12-B16695A267A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B52052-87B2-455C-9F12-B16695A267A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B52052-87B2-455C-9F12-B16695A267A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B52052-87B2-455C-9F12-B16695A267A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31B52052-87B2-455C-9F12-B16695A267A4} = {4B7DCD60-218F-4D49-BE89-E1482A24AE3A}
 	EndGlobalSection
 EndGlobal
