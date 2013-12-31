@@ -14,10 +14,10 @@ namespace SimpleExample
             var car = carBuilder
                 .Blue()
                 .ToyotaPrius()
-                .FastCar()
+                .Fast()
                 .Build();
 
-            Assert.Equals("Blue", car.Color);
+            Assert.AreEqual("Blue", car.Color);
         }
     }
 }

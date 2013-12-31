@@ -30,7 +30,7 @@ namespace SimpleExample
             return Car;
         }
 
-        public CarBuilder FastCar()
+        public CarBuilder Fast()
         {
             Car.Horsepower = 1000;
 
