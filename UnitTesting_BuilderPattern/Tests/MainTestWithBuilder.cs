@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTesting_BuilderPattern.Builders;
 using UnitTesting_BuilderPattern.Objects;
 using UnitTesting_BuilderPattern.Stubs;
@@ -17,7 +16,7 @@ namespace UnitTesting_BuilderPattern.Tests
             // 1a. Set up objects to inject
             var database = new StubDatabase
             {
-                StubTransactionId = -1,
+                StubTransactionId = 1,
                 StubIsDatabaseOnline = true
             };
 
@@ -48,7 +47,7 @@ namespace UnitTesting_BuilderPattern.Tests
             var result = main.DoStuff();
 
             // 3. ASSERT
-            Assert.IsFalse(result);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]

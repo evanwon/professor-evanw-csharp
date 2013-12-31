@@ -48,7 +48,7 @@ namespace UnitTesting_BuilderPattern.Tests
             var result = main.DoStuff();
 
             // 3. ASSERT
-            Assert.IsFalse(result);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]

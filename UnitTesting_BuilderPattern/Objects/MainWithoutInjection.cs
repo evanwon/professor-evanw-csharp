@@ -21,6 +21,11 @@ namespace UnitTesting_BuilderPattern.Objects
                 return false;
             }
 
+            if (user.IsAccountOverdrawn())
+            {
+                return false;
+            }
+
             var transactionId = database.ChargeUserForProduct(user.Id, product.Code);
 
             database.SaveTransaction(transactionId);
